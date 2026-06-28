@@ -315,7 +315,7 @@ async function apiCall(action, payload) {
 }
 
 const Backend = {
-  enabled: !!API_URL && API_URL !== 'https://script.google.com/macros/s/AKfycbzMOXk5Of1rI_NoTMMJjpDBc-dyB0yN4ZaLUiMYSsxGP-0NMglehF3b3FmgBZObIIQP/exec',
+  enabled: !!API_URL,
   async get() { return (await apiCall('get', { token: AUTH_TOKEN })).data || []; },
   async save(data) { return apiCall('save', { token: AUTH_TOKEN, data }); }
 };
